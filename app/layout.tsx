@@ -6,6 +6,7 @@ import { Providers } from "./providers";
 
 import Footer from "@/components/layout/Footer/Footer";
 import Header from "@/components/layout/Header/Header";
+import { StyledComponentsRegistry } from "@/components/theme/themeConfig/StyledComponentsRegistry";
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
 
@@ -41,15 +42,17 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen">
-            <Header />
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-              {children}
-            </main>
-            <Footer />
-          </div>
-        </Providers>
+        <StyledComponentsRegistry>
+          <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+            <div className="relative flex flex-col h-screen">
+              <Header />
+              <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+                {children}
+              </main>
+              <Footer />
+            </div>
+          </Providers>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );

@@ -8,6 +8,8 @@ import { useTheme } from "next-themes";
 import { FC } from "react";
 import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 
+import { theme as appTheme } from "../themeConfig/theme";
+
 export interface ThemeSwitchProps {
   className?: string;
   classNames?: SwitchProps["classNames"];
@@ -70,9 +72,9 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
         })}
       >
         {!isSelected || isSSR ? (
-          <BsFillSunFill size={22} />
+          <BsFillSunFill color={appTheme.colors.IconsWhite} size={22} />
         ) : (
-          <BsFillMoonFill size={22} />
+          <BsFillMoonFill color={appTheme.colors.IconsWhite} size={22} />
         )}
       </div>
     </Component>
