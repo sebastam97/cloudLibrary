@@ -15,9 +15,9 @@ export enum sizeNamed {
 }
 
 export const device = {
-  sm: `@media (min-width: ${size.sm}px)`,
-  md: `@media (min-width: ${size.md}px)`,
-  lg: `@media (min-width: ${size.lg}px)`,
-  xl: `@media (min-width: ${size.xl}px)`,
-  xxl: `@media (min-width: ${size.xxl}px)`,
+  sm: `(min-width: ${size.sm}px)`,
+  md: `(min-width: ${size.md}px)`,
+  lg: `(min-width: ${size.lg}px)`,
+  xl: `(min-width: ${size.xl}px)`,
+  xxl: `(min-width: ${size.xxl}px)`,
 };
