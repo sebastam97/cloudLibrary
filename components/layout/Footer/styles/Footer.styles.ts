@@ -1,6 +1,7 @@
-'use client';
-import { device } from '@/constants/breakpoints';
-import styled from 'styled-components';
+"use client";
+import styled from "styled-components";
+
+import { device } from "@/constants/breakpoints";
 
 export const FooterContainer = styled.footer`
   background: #1f2937;

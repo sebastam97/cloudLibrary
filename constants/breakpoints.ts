@@ -3,7 +3,7 @@ export const size = {
   md: 768,
   lg: 992,
   xl: 1200,
-  xxl: 1400
+  xxl: 1400,
 };
 
 export enum sizeNamed {
@@ -11,7 +11,7 @@ export enum sizeNamed {
   md = 768,
   lg = 992,
   xl = 1200,
-  xxl = 1400
+  xxl = 1400,
 }
 
 export const device = {
@@ -19,5 +19,5 @@ export const device = {
   md: `@media (min-width: ${size.md}px)`,
   lg: `@media (min-width: ${size.lg}px)`,
   xl: `@media (min-width: ${size.xl}px)`,
-  xxl: `@media (min-width: ${size.xxl}px)`
+  xxl: `@media (min-width: ${size.xxl}px)`,
 };

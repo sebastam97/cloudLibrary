@@ -1,10 +1,13 @@
-import { ThemeSwitch } from '@/components/theme/theme-switch';
-import { Badge } from '@heroui/badge';
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from '@heroui/navbar';
-import { Logo, NavLink } from './styles/Header.styles';
+import { Badge } from "@heroui/badge";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@heroui/navbar";
+
+import { Logo, NavLink } from "./styles/Header.styles";
+
+import { ThemeSwitch } from "@/components/theme/theme-switch";
 
 function Header() {
   const itemCount = 5; // Replace with actual cart item count logic
+
   return (
     <Navbar>
       <NavbarBrand>

@@ -1,4 +1,5 @@
-import { Link } from '@heroui/link';
+import { Link } from "@heroui/link";
+
 import {
   Copyright,
   FooterBottom,
@@ -9,8 +10,8 @@ import {
   PaymentIcon,
   PaymentMethods,
   SocialLink,
-  SocialLinks
-} from './styles/Footer.styles';
+  SocialLinks,
+} from "./styles/Footer.styles";
 
 function Footer() {
   return (
@@ -26,16 +27,16 @@ function Footer() {
                 mejor literatura directamente a tu puerta.
               </p>
               <SocialLinks>
-                <SocialLink href="#" aria-label="Facebook">
+                <SocialLink aria-label="Facebook" href="#">
                   📘
                 </SocialLink>
-                <SocialLink href="#" aria-label="Twitter">
+                <SocialLink aria-label="Twitter" href="#">
                   🐦
                 </SocialLink>
-                <SocialLink href="#" aria-label="Instagram">
+                <SocialLink aria-label="Instagram" href="#">
                   📷
                 </SocialLink>
-                <SocialLink href="#" aria-label="YouTube">
+                <SocialLink aria-label="YouTube" href="#">
                   📺
                 </SocialLink>
               </SocialLinks>
@@ -149,7 +150,7 @@ function Footer() {
               &copy; 2024 BookStore. Todos los derechos reservados.
             </Copyright>
             <PaymentMethods>
-              <span style={{ color: '#9ca3af', marginRight: '12px' }}>
+              <span style={{ color: "#9ca3af", marginRight: "12px" }}>
                 Aceptamos:
               </span>
               <PaymentIcon>VISA</PaymentIcon>

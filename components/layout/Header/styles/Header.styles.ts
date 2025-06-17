@@ -1,6 +1,6 @@
-'use client';
-import { Link } from '@heroui/link';
-import styled from 'styled-components';
+"use client";
+import { Link } from "@heroui/link";
+import styled from "styled-components";
 export const Logo = styled(Link)`
   font-size: 24px;
   font-weight: bold;
