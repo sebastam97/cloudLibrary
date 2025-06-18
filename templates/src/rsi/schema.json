@@ -51,27 +51,43 @@
     },
     "includePages": {
       "type": "boolean",
-      "description": "Include page.tsx file",
-      "x-prompt": "Do you want to create the main page.tsx file?"
+      "description": "Include pages folder",
+      "x-prompt": "Do you want to include the pages folder?"
     },
     "includeStore": {
       "type": "string",
       "description": "The type of store to include",
-      "enum": ["simple", "composed", "none"],
+      "enum": [
+        "simple",
+        "composed",
+        "none"
+      ],
       "x-prompt": {
         "message": "What type of store do you want to include?",
         "type": "list",
-        "items": ["simple", "composed", "none"]
+        "items": [
+          "simple",
+          "composed",
+          "none"
+        ]
       }
     },
     "includeRedux": {
       "type": "string",
       "description": "The type of query to include",
-      "enum": ["base", "extended", "none"],
+      "enum": [
+        "base",
+        "extended",
+        "none"
+      ],
       "x-prompt": {
         "message": "What type of query do you want to include?",
         "type": "list",
-        "items": ["base", "extended", "none"]
+        "items": [
+          "base",
+          "extended",
+          "none"
+        ]
       }
     }
   },

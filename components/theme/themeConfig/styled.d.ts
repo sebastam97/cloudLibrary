@@ -5,6 +5,8 @@ declare module "styled-components" {
     colors: {
       navbarBg: string;
       navbarText: string;
+      IconsWhite: string;
+      textWthite: string;
     };
   }
 }
