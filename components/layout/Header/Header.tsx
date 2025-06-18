@@ -58,12 +58,18 @@ function Header() {
       <NavbarMenu>
         {menuItems.map((item) => (
           <NavbarMenuItem key={item.href}>
-            <Badge
-              color="danger"
-              content={item.badge}
-              isInvisible={item.badge === 0}
-              shape="circle"
-            >
+            {(item.badge ?? 0) > 0 ? (
+              <Badge color="danger" content={item.badge ?? ""} shape="circle">
+                <Link
+                  className=""
+                  color={item.color || "foreground"}
+                  href={item.href}
+                  size="lg"
+                >
+                  {item.icon && item.icon} {item.label}
+                </Link>
+              </Badge>
+            ) : (
               <Link
                 className=""
                 color={item.color || "foreground"}
@@ -71,8 +77,8 @@ function Header() {
                 size="lg"
               >
                 {item.icon && item.icon} {item.label}
-              </Link>{" "}
-            </Badge>
+              </Link>
+            )}
           </NavbarMenuItem>
         ))}
       </NavbarMenu>

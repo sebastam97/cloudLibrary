@@ -1,4 +1,5 @@
 import { heroui } from "@heroui/theme";
+import { darkTheme, lightTheme } from "./components/theme/themeConfig/theme.ts";
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -16,7 +17,22 @@ const config = {
     },
   },
   darkMode: "class",
-  plugins: [heroui()],
+  plugins: [
+    heroui({
+      themes: {
+        light: {
+          colors: {
+            primary: lightTheme.colors.primary,
+          },
+        },
+        dark: {
+          colors: {
+            primary: darkTheme.colors.primary,
+          },
+        },
+      },
+    }),
+  ],
 };
 
 module.exports = config;

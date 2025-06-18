@@ -21,7 +21,6 @@ function SectionHeader() {
         <ButtonContainer>
           <Button
             as={Link}
-            className="bg-white text-blue-600 hover:bg-gray-100"
             color="primary"
             href="/books"
             size="lg"
@@ -31,7 +30,6 @@ function SectionHeader() {
           </Button>
           <Button
             as={Link}
-            className="border-white text-white hover:bg-white hover:text-blue-600"
             color="primary"
             href="/auth/login"
             size="lg"

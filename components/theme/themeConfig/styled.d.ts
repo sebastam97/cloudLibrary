@@ -8,6 +8,10 @@ declare module "styled-components" {
       background: string;
       text: string;
       icon: string;
+      primary: {
+        DEFAULT: string;
+        foreground: string;
+      };
     };
   }
 }
