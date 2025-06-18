@@ -1,0 +1,14 @@
+import { createStore, useStore } from "zustand";
+
+export type IStore<%= classify(moduleName) %> = {
+};
+
+export type IStore<%= classify(moduleName) %>State = IStore<%= classify(moduleName) %> & {
+};
+
+export const <%= camelize(moduleName) %>Store = createStore<IStore<%= classify(moduleName) %>State>((set) => ({
+}));
+
+export const use<%= capitalize(moduleName) %>Store = <T>(selector: (store: IStore<%= classify(moduleName) %>State) => T): T => {
+  return useStore(<%= camelize(moduleName) %>Store, selector);
+};

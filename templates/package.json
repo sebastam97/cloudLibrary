@@ -1,0 +1,27 @@
+{
+  "name": "templates",
+  "version": "0.0.0",
+  "description": "A blank schematics",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && jasmine src/**/*_spec.js"
+  },
+  "keywords": [
+    "schematics"
+  ],
+  "author": "",
+  "license": "MIT",
+  "schematics": "./src/collection.json",
+  "dependencies": {
+    "@schematics/angular": "^9.1.13",
+    "typescript": "~5.7.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/core": "^19.2.5",
+    "@angular-devkit/schematics": "^19.2.5",
+    "@angular-devkit/schematics-cli": "^19.2.5",
+    "@types/jasmine": "~5.1.0",
+    "@types/node": "^18.18.0",
+    "jasmine": "^5.0.0"
+  }
+}

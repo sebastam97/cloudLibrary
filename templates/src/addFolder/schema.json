@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "AddFolderSchematic",
+  "title": "Add Folder Options Schema",
+  "type": "object",
+  "properties": {
+    "moduleName": {
+      "type": "string",
+      "description": "The name of the existing module",
+      "x-prompt": "What is the name of the existing module?"
+    },
+    "folderType": {
+      "type": "string",
+      "description": "The type of folder to add",
+      "enum": ["adapters", "components", "constants", "models", "styles", "pages", "hooks", "enums", "store","storeCompose"],
+      "x-prompt": {
+        "message": "Which folder would you like to add?",
+        "type": "list",
+        "items": [
+          "adapters",
+          "components",
+          "constants",
+          "models",
+          "styles",
+          "pages",
+          "hooks",
+          "enums",
+          "store",
+          "storeCompose"
+        ]
+      }
+    },
+    "path": {
+      "type": "string",
+      "description": "The path to the module",
+      "x-prompt": "What is the path to the module? (e.g., src/modules)"
+    }
+  },
+  "required": ["moduleName", "folderType", "path"]
+}

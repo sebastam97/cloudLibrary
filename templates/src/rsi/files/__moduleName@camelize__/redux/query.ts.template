@@ -1,0 +1,12 @@
+import { rtkGlobals } from "@im-colsof-softwaredevelopment/ui-components/dist/constants";
+import { axiosBaseQuery } from "@im-colsof-softwaredevelopment/ui-components/dist/utils/rtk";
+import { createApi } from "@reduxjs/toolkit/query/react";
+import {  } from "config/routesApi/instanceApi";
+
+export const <%= camelize(moduleName) %>Api = createApi({
+  baseQuery: axiosBaseQuery({ base:  }),
+  endpoints: (builder) => ({}),
+  ...rtkGlobals
+});
+
+export const {} = <%= camelize(moduleName) %>Api;

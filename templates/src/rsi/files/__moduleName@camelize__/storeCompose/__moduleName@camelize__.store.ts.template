@@ -1,0 +1,26 @@
+import { useContext } from "react";
+import { createStore, useStore } from "zustand";
+
+import { <%= capitalize(moduleName) %>Context } from "./<%= capitalize(moduleName) %>Provider";
+
+export type <%= capitalize(moduleName) %>Props = {
+};
+export type <%= capitalize(moduleName) %>State = <%= capitalize(moduleName) %>Props & {
+};
+
+export type <%= capitalize(moduleName) %>Store = ReturnType<typeof create<%= capitalize(moduleName) %>Store>;
+
+export const  create<%= capitalize(moduleName) %>Store = (initProps?: Partial<<%= capitalize(moduleName) %>Props>) => {
+  const DEFAULT_PROPS: <%= capitalize(moduleName) %>Props = {
+  };
+  return createStore<<%= capitalize(moduleName) %>State>((set) => ({
+    ...DEFAULT_PROPS,
+    ...initProps
+  }));
+};
+
+export function use<%= capitalize(moduleName) %>Store<T>(selector: (state: <%= capitalize(moduleName) %>State) => T): T {
+  const store = useContext(<%= capitalize(moduleName) %>Context);
+  if (!store) throw new Error("Missing <%= capitalize(moduleName) %>.Provider in the tree");
+  return useStore(store, selector);
+}

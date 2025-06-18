@@ -1,0 +1,15 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "rsi": {
+      "description": "A blank schematic.",
+      "factory": "./rsi/index#rsi",
+      "schema": "./rsi/schema.json"
+    },
+    "addFolder": {
+      "description": "Add a folder to an existing module.",
+      "factory": "./addFolder/index#addFolder",
+      "schema": "./addFolder/schema.json"
+    }
+  }
+}

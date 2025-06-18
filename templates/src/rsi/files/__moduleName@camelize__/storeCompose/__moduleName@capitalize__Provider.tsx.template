@@ -1,0 +1,14 @@
+import { createContext, PropsWithChildren, useRef } from "react";
+
+import { create<%= capitalize(moduleName) %>Store, <%= capitalize(moduleName) %>Props, <%= capitalize(moduleName) %>Store } from "./<%= camelize(moduleName) %>.store";
+
+type <%= capitalize(moduleName) %>ProviderProps = PropsWithChildren<Partial<<%= capitalize(moduleName) %>Props>>;
+
+export const <%= capitalize(moduleName) %>Context = createContext<<%= capitalize(moduleName) %>Store | null>(null);
+export default function <%= capitalize(moduleName) %>Provider({ children, ...props }: <%= capitalize(moduleName) %>ProviderProps) {
+  const storeRef = useRef<<%= capitalize(moduleName) %>Store>();
+  if (!storeRef.current) {
+    storeRef.current = create<%= capitalize(moduleName) %>Store(props);
+  }
+  return <<%= capitalize(moduleName) %>Context.Provider value={storeRef.current}>{children}</<%= capitalize(moduleName) %>Context.Provider>;
+}

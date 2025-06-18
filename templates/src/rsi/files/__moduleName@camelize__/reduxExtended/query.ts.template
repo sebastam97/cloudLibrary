@@ -1,0 +1,10 @@
+export const <%= camelize(moduleName) %>Api = api
+  .enhanceEndpoints({
+  })
+  .injectEndpoints({
+    endpoints: (builder) => ({
+    })
+  });
+export const {
+
+} = <%= camelize(moduleName) %>Api;

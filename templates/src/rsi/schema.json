@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "ReactModuleGenerator",
+  "title": "React Module Generator Schema",
+  "type": "object",
+  "properties": {
+    "moduleName": {
+      "type": "string",
+      "description": "The name of the module",
+      "x-prompt": "What is the name of your module?"
+    },
+    "path": {
+      "type": "string",
+      "description": "The path where the module will be created",
+      "x-prompt": "Where do you want to create the module?"
+    },
+    "includeAdapters": {
+      "type": "boolean",
+      "description": "Include adapters folder",
+      "x-prompt": "Do you want to include the adapters folder?"
+    },
+    "includeComponents": {
+      "type": "boolean",
+      "description": "Include components folder",
+      "x-prompt": "Do you want to include the components folder?"
+    },
+    "includeConstants": {
+      "type": "boolean",
+      "description": "Include constants folder",
+      "x-prompt": "Do you want to include the constants folder?"
+    },
+    "includeEnums": {
+      "type": "boolean",
+      "description": "Include enums folder",
+      "x-prompt": "Do you want to include the enums folder?"
+    },
+    "includeHooks": {
+      "type": "boolean",
+      "description": "Include hooks folder",
+      "x-prompt": "Do you want to include the hooks folder?"
+    },
+    "includeModels": {
+      "type": "boolean",
+      "description": "Include models folder",
+      "x-prompt": "Do you want to include the models folder?"
+    },
+    "includeStyles": {
+      "type": "boolean",
+      "description": "Include styles folder",
+      "x-prompt": "Do you want to include the styles folder?"
+    },
+    "includePages": {
+      "type": "boolean",
+      "description": "Include page.tsx file",
+      "x-prompt": "Do you want to create the main page.tsx file?"
+    },
+    "includeStore": {
+      "type": "string",
+      "description": "The type of store to include",
+      "enum": ["simple", "composed", "none"],
+      "x-prompt": {
+        "message": "What type of store do you want to include?",
+        "type": "list",
+        "items": ["simple", "composed", "none"]
+      }
+    },
+    "includeRedux": {
+      "type": "string",
+      "description": "The type of query to include",
+      "enum": ["base", "extended", "none"],
+      "x-prompt": {
+        "message": "What type of query do you want to include?",
+        "type": "list",
+        "items": ["base", "extended", "none"]
+      }
+    }
+  },
+  "required": ["moduleName", "path"]
+}
