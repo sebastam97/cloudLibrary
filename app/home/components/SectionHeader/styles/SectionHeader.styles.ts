@@ -6,7 +6,7 @@ import { device } from "@/constants/breakpoints";
 
 export const Section = styled.section`
   background-color: ${({ theme }) => theme.colors.navbarBg};
-  color: ${({ theme }) => theme.colors.textWthite};
+  color: ${({ theme }) => theme.colors.text};
   padding: 5rem 0;
 `;
 

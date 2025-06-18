@@ -7,8 +7,7 @@ import clsx from "clsx";
 import { useTheme } from "next-themes";
 import { FC } from "react";
 import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
-
-import { theme as appTheme } from "../themeConfig/theme";
+import { useTheme as useStyledTheme } from "styled-components";
 
 export interface ThemeSwitchProps {
   className?: string;
@@ -20,6 +19,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   classNames,
 }) => {
   const { theme, setTheme } = useTheme();
+  const themeContext = useStyledTheme();
   const isSSR = useIsSSR();
 
   const onChange = () => {
@@ -72,9 +72,9 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
         })}
       >
         {!isSelected || isSSR ? (
-          <BsFillSunFill color={appTheme.colors.IconsWhite} size={22} />
+          <BsFillSunFill color={themeContext.colors.icon} size={22} />
         ) : (
-          <BsFillMoonFill color={appTheme.colors.IconsWhite} size={22} />
+          <BsFillMoonFill color={themeContext.colors.icon} size={22} />
         )}
       </div>
     </Component>
