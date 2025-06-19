@@ -18,7 +18,7 @@ export function useMenuItemsHook() {
       { label: "Libros", href: "/books" },
       {
         label: "Carrito",
-        href: "/cart",
+        href: "/shoppingCart",
         badge: 5,
         icon: <BsCart3 />,
       },
