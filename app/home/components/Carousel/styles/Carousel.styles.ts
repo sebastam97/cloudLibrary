@@ -6,6 +6,7 @@ import { device } from "@/constants/breakpoints";
 export const CarouselWrapper = styled.div`
   position: relative;
   width: 100%;
+  padding: 1rem;
 `;
 
 export const CarouselContainer = styled.div`

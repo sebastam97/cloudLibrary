@@ -7,12 +7,12 @@ import { device } from "@/constants/breakpoints";
 export const CardContainer = styled.div.attrs<{ $imageLoaded?: boolean }>(
   () => ({}),
 )<{ $imageLoaded?: boolean }>`
-  flex: 0 0 140px;
-  width: 140px;
-  max-width: 140px;
-  min-width: 120px;
-  min-height: 400px;
-  height: 100%;
+  min-height: 600px;
+  height: 600px;
+  @media ${device.md} {
+    min-height: 430px;
+    height: 430px;
+  }
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -29,29 +29,6 @@ export const CardContainer = styled.div.attrs<{ $imageLoaded?: boolean }>(
   &:hover {
     box-shadow: 0 8px 32px #0003;
     transform: scale(1.05) translateY(-8px);
-  }
-
-  @media ${device.lg} {
-    flex: 0 0 140px;
-    width: 140px;
-    max-width: 140px;
-    min-width: 120px;
-  }
-  @media ${device.md} {
-    flex: 0 0 120px;
-    width: 120px;
-    max-width: 120px;
-    min-width: 100px;
-  }
-  @media ${device.sm} {
-    flex: 0 0 90vw;
-    width: 90vw;
-    max-width: 100vw;
-    min-width: 0;
-    min-height: 260px;
-    font-size: 0.9rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 2px 8px #0001;
   }
 `;
 
@@ -193,6 +170,7 @@ export const CardTitleStyled = styled.h4`
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-height: 2.4em;
 `;
 
 export const CardAuthorStyled = styled.p`
@@ -200,6 +178,12 @@ export const CardAuthorStyled = styled.p`
   font-weight: 500;
   font-size: 0.95rem;
   margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 1.2em;
 `;
 
 export const CardDescriptionStyled = styled.p`
@@ -211,6 +195,8 @@ export const CardDescriptionStyled = styled.p`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 2.8em;
 `;
 
 export const CardPrice = styled.div.attrs<{ $hovered?: boolean }>(() => ({}))<{
