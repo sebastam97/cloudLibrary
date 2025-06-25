@@ -80,6 +80,81 @@ const Home = ({}: HomeProps) => {
       publishedDate: "2018-08-14",
       pages: 384,
     },
+    {
+      id: "new6",
+      title: "Donde Cantan los Cangrejos",
+      author: "Delia Owens",
+      description:
+        "Un misterio ambientado en las marismas de Carolina del Norte sobre una joven que vive aislada de la sociedad.",
+      price: 26.99,
+      image:
+        "https://i.pinimg.com/736x/29/e3/47/29e3471249c2498e024eb6130b9fb7e4.jpg",
+      category: "Misterio",
+      rating: 4.5,
+      isbn: "978-0735219090",
+      publishedDate: "2018-08-14",
+      pages: 384,
+    },
+    {
+      id: "new7",
+      title: "Donde Cantan los Cangrejos",
+      author: "Delia Owens",
+      description:
+        "Un misterio ambientado en las marismas de Carolina del Norte sobre una joven que vive aislada de la sociedad.",
+      price: 26.99,
+      image:
+        "https://i.pinimg.com/736x/29/e3/47/29e3471249c2498e024eb6130b9fb7e4.jpg",
+      category: "Misterio",
+      rating: 4.5,
+      isbn: "978-0735219090",
+      publishedDate: "2018-08-14",
+      pages: 384,
+    },
+    {
+      id: "new8",
+      title: "Donde Cantan los Cangrejos",
+      author: "Delia Owens",
+      description:
+        "Un misterio ambientado en las marismas de Carolina del Norte sobre una joven que vive aislada de la sociedad.",
+      price: 26.99,
+      image:
+        "https://i.pinimg.com/736x/29/e3/47/29e3471249c2498e024eb6130b9fb7e4.jpg",
+      category: "Misterio",
+      rating: 4.5,
+      isbn: "978-0735219090",
+      publishedDate: "2018-08-14",
+      pages: 384,
+    },
+    {
+      id: "new9",
+      title: "Donde Cantan los Cangrejos",
+      author: "Delia Owens",
+      description:
+        "Un misterio ambientado en las marismas de Carolina del Norte sobre una joven que vive aislada de la sociedad.",
+      price: 26.99,
+      image:
+        "https://i.pinimg.com/736x/29/e3/47/29e3471249c2498e024eb6130b9fb7e4.jpg",
+      category: "Misterio",
+      rating: 4.5,
+      isbn: "978-0735219090",
+      publishedDate: "2018-08-14",
+      pages: 384,
+    },
+    {
+      id: "new10",
+      title: "Donde Cantan los Cangrejos",
+      author: "Delia Owens",
+      description:
+        "Un misterio ambientado en las marismas de Carolina del Norte sobre una joven que vive aislada de la sociedad.",
+      price: 26.99,
+      image:
+        "https://i.pinimg.com/736x/29/e3/47/29e3471249c2498e024eb6130b9fb7e4.jpg",
+      category: "Misterio",
+      rating: 4.5,
+      isbn: "978-0735219090",
+      publishedDate: "2018-08-14",
+      pages: 384,
+    },
   ];
 
   return (

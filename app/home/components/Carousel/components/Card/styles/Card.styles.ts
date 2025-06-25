@@ -2,12 +2,16 @@
 
 import styled from "styled-components";
 
+import { device } from "@/constants/breakpoints";
+
 export const CardContainer = styled.div.attrs<{ $imageLoaded?: boolean }>(
   () => ({}),
 )<{ $imageLoaded?: boolean }>`
-  width: 100%;
-  max-width: 280px;
-  min-height: 600px;
+  flex: 0 0 140px;
+  width: 140px;
+  max-width: 140px;
+  min-width: 120px;
+  min-height: 400px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -26,6 +30,29 @@ export const CardContainer = styled.div.attrs<{ $imageLoaded?: boolean }>(
     box-shadow: 0 8px 32px #0003;
     transform: scale(1.05) translateY(-8px);
   }
+
+  @media ${device.lg} {
+    flex: 0 0 140px;
+    width: 140px;
+    max-width: 140px;
+    min-width: 120px;
+  }
+  @media ${device.md} {
+    flex: 0 0 120px;
+    width: 120px;
+    max-width: 120px;
+    min-width: 100px;
+  }
+  @media ${device.sm} {
+    flex: 0 0 90vw;
+    width: 90vw;
+    max-width: 100vw;
+    min-width: 0;
+    min-height: 260px;
+    font-size: 0.9rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px #0001;
+  }
 `;
 
 export const CardHeaderStyled = styled.div`
@@ -39,6 +66,7 @@ export const CardHeaderStyled = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   padding: 0;
+  pointer-events: none;
 `;
 
 export const CardChipStyled = styled.div.attrs<{
@@ -66,6 +94,7 @@ export const CardChipStyled = styled.div.attrs<{
   margin-bottom: 0.25rem;
   transform: ${({ $hovered }) => ($hovered ? "scale(1.1)" : "scale(1)")};
   animation: ${({ $pulse }) => ($pulse ? "pulse 1.5s infinite" : "none")};
+  pointer-events: auto;
   @keyframes pulse {
     0%,
     100% {
@@ -83,6 +112,12 @@ export const CardImageStyled = styled.img<{ $hovered?: boolean }>`
   object-fit: cover;
   transition: transform 0.7s;
   transform: ${({ $hovered }) => ($hovered ? "scale(1.1)" : "scale(1)")};
+  @media ${device.md} {
+    height: 220px;
+  }
+  @media ${device.sm} {
+    height: 160px;
+  }
 `;
 
 export const CardImageWrapper = styled.div`
@@ -97,6 +132,14 @@ export const CardBodyStyled = styled.div`
   gap: 0.75rem;
   flex: 1 1 auto;
   min-height: 0;
+  @media ${device.md} {
+    padding: 0.7rem;
+    gap: 0.5rem;
+  }
+  @media ${device.sm} {
+    padding: 0.5rem;
+    gap: 0.3rem;
+  }
 `;
 
 export const CardBodySpacer = styled.div`
@@ -110,6 +153,12 @@ export const CardFooterStyled = styled.div`
   align-items: flex-start;
   width: 100%;
   margin-top: auto;
+  @media ${device.md} {
+    padding: 0.7rem 0.7rem 0 0.7rem;
+  }
+  @media ${device.sm} {
+    padding: 0.5rem 0.5rem 0 0.5rem;
+  }
 `;
 
 export const CardStarsStyled = styled.div`
