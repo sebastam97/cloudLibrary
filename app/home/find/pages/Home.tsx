@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 
+import { HomeContainer } from "../styles/Home.styles";
 import Carousel from "../components/Carousel/Carousel";
 import SectionHeader from "../components/SectionHeader/SectionHeader";
-import { HomeContainer } from "../styles/Home.styles";
 
 const fetchBookPages = async (book: any) => {
   let pages = null;
