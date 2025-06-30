@@ -4,6 +4,7 @@ import { Button } from "@heroui/button";
 import { BsBook, BsClock, BsEye } from "react-icons/bs";
 
 import { useCardHoverAndImage } from "../../hooks/useCardHoverAndImage/useCardHoverAndImage";
+
 import {
   CardAuthorStyled,
   CardBodySpacer,
@@ -18,6 +19,7 @@ import {
   CardImageWrapper,
   CardOverlay,
   CardPrice,
+  CardPublishedDateStyled,
   CardStarsStyled,
   CardStatStyled,
   CardStatsStyled,
@@ -78,15 +80,22 @@ export default function BookCard({ book }: Props) {
         <CardStatsStyled>
           <CardStatStyled>
             <BsBook size={12} />
-            {book.pages}p
+            {typeof book.pages === "number" && book.pages > 0
+              ? `${book.pages}p`
+              : "Desconocido"}
           </CardStatStyled>
           <CardStatStyled>
             <BsClock size={12} />
-            {Math.ceil(book.pages / 250)}h
+            {typeof book.pages === "number" && book.pages > 0
+              ? `${Math.ceil(book.pages / 250)}h`
+              : "-"}
           </CardStatStyled>
         </CardStatsStyled>
         <CardTitleStyled>{book.title}</CardTitleStyled>
         <CardAuthorStyled>por {book.author}</CardAuthorStyled>
+        <CardPublishedDateStyled>
+          Publicado: {book.publishedDate}
+        </CardPublishedDateStyled>
         <CardDescriptionStyled>{book.description}</CardDescriptionStyled>
         <CardBodySpacer />
       </CardBodyStyled>

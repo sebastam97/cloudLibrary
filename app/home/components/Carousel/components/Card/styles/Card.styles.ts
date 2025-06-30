@@ -7,8 +7,8 @@ import { device } from "@/constants/breakpoints";
 export const CardContainer = styled.div.attrs<{ $imageLoaded?: boolean }>(
   () => ({}),
 )<{ $imageLoaded?: boolean }>`
-  min-height: 600px;
-  height: 600px;
+  min-height: 650px;
+  height: 650px;
   @media ${device.md} {
     min-height: 430px;
     height: 430px;
@@ -231,4 +231,9 @@ export const CardFooterButtonHero = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+`;
+export const CardPublishedDateStyled = styled.p`
+  color: ${({ theme }) => theme.colors.gray.mid};
+  font-size: 0.85rem;
+  margin: 0;
 `;

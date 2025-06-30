@@ -37,8 +37,8 @@ const Carousel: React.FC<CarouselProps> = ({ books, title }) => {
     <CarouselWrapper>
       {title && <CarouselTitle>{title}</CarouselTitle>}
       <CarouselArrow
+        $left={true}
         aria-label="Ver anterior"
-        left={true}
         type="button"
         onClick={() => scroll("left")}
       >

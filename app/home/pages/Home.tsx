@@ -1,166 +1,129 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 import Carousel from "../components/Carousel/Carousel";
 import SectionHeader from "../components/SectionHeader/SectionHeader";
 import { HomeContainer } from "../styles/Home.styles";
 
-type HomeProps = {};
-const Home = ({}: HomeProps) => {
-  const newReleases = [
-    {
-      id: "new1",
-      title: "Proyecto Hail Mary",
-      author: "Andy Weir",
-      description:
-        "Un astronauta despierta solo en una nave espacial sin recordar cómo llegó allí, con la misión de salvar a la humanidad.",
-      price: 29.99,
-      image:
-        "https://i.pinimg.com/736x/29/e3/47/29e3471249c2498e024eb6130b9fb7e4.jpg",
-      category: "Ciencia Ficción",
-      rating: 4.8,
-      isbn: "978-0593135204",
-      publishedDate: "2021-05-04",
-      pages: 496,
-    },
-    {
-      id: "new2",
-      title: "Klara y el Sol",
-      author: "Kazuo Ishiguro",
-      description:
-        "La historia de Klara, una Amiga Artificial que observa el mundo desde el escaparate de una tienda.",
-      price: 27.99,
-      image:
-        "/https://i.pinimg.com/736x/29/e3/47/29e3471249c2498e024eb6130b9fb7e4.jpg",
-      category: "Ficción Literaria",
-      rating: 4.4,
-      isbn: "978-0571364886",
-      publishedDate: "2021-03-02",
-      pages: 320,
-    },
-    {
-      id: "new3",
-      title: "Los Siete Maridos de Evelyn Hugo",
-      author: "Taylor Jenkins Reid",
-      description:
-        "Una leyenda de Hollywood revela finalmente sus secretos más íntimos a una joven periodista.",
-      price: 25.99,
-      image:
-        "https://i.pinimg.com/736x/29/e3/47/29e3471249c2498e024eb6130b9fb7e4.jpg",
-      category: "Ficción Histórica",
-      rating: 4.6,
-      isbn: "978-1501161933",
-      publishedDate: "2017-06-13",
-      pages: 400,
-    },
-    {
-      id: "new4",
-      title: "Educated",
-      author: "Tara Westover",
-      description:
-        "Una memoria poderosa sobre una mujer que nunca fue a la escuela pero acabó con un doctorado de Harvard.",
-      price: 24.99,
-      image:
-        "https://i.pinimg.com/736x/29/e3/47/29e3471249c2498e024eb6130b9fb7e4.jpg",
-      category: "Biografía",
-      rating: 4.7,
-      isbn: "978-0399590504",
-      publishedDate: "2018-02-20",
-      pages: 334,
-    },
-    {
-      id: "new5",
-      title: "Donde Cantan los Cangrejos",
-      author: "Delia Owens",
-      description:
-        "Un misterio ambientado en las marismas de Carolina del Norte sobre una joven que vive aislada de la sociedad.",
-      price: 26.99,
-      image:
-        "https://i.pinimg.com/736x/29/e3/47/29e3471249c2498e024eb6130b9fb7e4.jpg",
-      category: "Misterio",
-      rating: 4.5,
-      isbn: "978-0735219090",
-      publishedDate: "2018-08-14",
-      pages: 384,
-    },
-    {
-      id: "new6",
-      title: "Donde Cantan los Cangrejos",
-      author: "Delia Owens",
-      description:
-        "Un misterio ambientado en las marismas de Carolina del Norte sobre una joven que vive aislada de la sociedad.",
-      price: 26.99,
-      image:
-        "https://i.pinimg.com/736x/29/e3/47/29e3471249c2498e024eb6130b9fb7e4.jpg",
-      category: "Misterio",
-      rating: 4.5,
-      isbn: "978-0735219090",
-      publishedDate: "2018-08-14",
-      pages: 384,
-    },
-    {
-      id: "new7",
-      title: "Donde Cantan los Cangrejos",
-      author: "Delia Owens",
-      description:
-        "Un misterio ambientado en las marismas de Carolina del Norte sobre una joven que vive aislada de la sociedad.",
-      price: 26.99,
-      image:
-        "https://i.pinimg.com/736x/29/e3/47/29e3471249c2498e024eb6130b9fb7e4.jpg",
-      category: "Misterio",
-      rating: 4.5,
-      isbn: "978-0735219090",
-      publishedDate: "2018-08-14",
-      pages: 384,
-    },
-    {
-      id: "new8",
-      title: "Donde Cantan los Cangrejos",
-      author: "Delia Owens",
-      description:
-        "Un misterio ambientado en las marismas de Carolina del Norte sobre una joven que vive aislada de la sociedad.",
-      price: 26.99,
-      image:
-        "https://i.pinimg.com/736x/29/e3/47/29e3471249c2498e024eb6130b9fb7e4.jpg",
-      category: "Misterio",
-      rating: 4.5,
-      isbn: "978-0735219090",
-      publishedDate: "2018-08-14",
-      pages: 384,
-    },
-    {
-      id: "new9",
-      title: "Donde Cantan los Cangrejos",
-      author: "Delia Owens",
-      description:
-        "Un misterio ambientado en las marismas de Carolina del Norte sobre una joven que vive aislada de la sociedad.",
-      price: 26.99,
-      image:
-        "https://i.pinimg.com/736x/29/e3/47/29e3471249c2498e024eb6130b9fb7e4.jpg",
-      category: "Misterio",
-      rating: 4.5,
-      isbn: "978-0735219090",
-      publishedDate: "2018-08-14",
-      pages: 384,
-    },
-    {
-      id: "new10",
-      title: "Donde Cantan los Cangrejos",
-      author: "Delia Owens",
-      description:
-        "Un misterio ambientado en las marismas de Carolina del Norte sobre una joven que vive aislada de la sociedad.",
-      price: 26.99,
-      image:
-        "https://i.pinimg.com/736x/29/e3/47/29e3471249c2498e024eb6130b9fb7e4.jpg",
-      category: "Misterio",
-      rating: 4.5,
-      isbn: "978-0735219090",
-      publishedDate: "2018-08-14",
-      pages: 384,
-    },
-  ];
+const fetchBookPages = async (book: any) => {
+  let pages = null;
+
+  try {
+    if (book.cover_edition_key) {
+      const res = await fetch(
+        `https://openlibrary.org/books/${book.cover_edition_key}.json`,
+      );
+
+      if (res.ok) {
+        const data = await res.json();
+
+        pages = data.number_of_pages || null;
+      }
+    }
+    if (!pages && book.key) {
+      const workKey = book.key.replace("/works/", "");
+      const res = await fetch(`https://openlibrary.org/works/${workKey}.json`);
+
+      if (res.ok) {
+        const data = await res.json();
+
+        pages = data.number_of_pages || null;
+      }
+    }
+  } catch (e) {
+    // Ignorar errores
+  }
+
+  return pages;
+};
+
+const fetchBookCategory = async (book: any) => {
+  let category = null;
+
+  try {
+    if (book.key) {
+      const workKey = book.key.replace("/works/", "");
+      const res = await fetch(`https://openlibrary.org/works/${workKey}.json`);
+
+      if (res.ok) {
+        const data = await res.json();
+
+        if (Array.isArray(data.subjects) && data.subjects.length > 0) {
+          category = data.subjects.slice(0, 2).join(", ");
+        }
+      }
+    }
+  } catch (e) {}
+
+  return category;
+};
+
+const fetchBooks = async (query: string) => {
+  const res = await fetch(
+    `https://openlibrary.org/search.json?title=${encodeURIComponent(query)}`,
+  );
+  const data = await res.json();
+
+  let books = await Promise.all(
+    data.docs.slice(0, 12).map(async (book: any) => {
+      let pages = book.number_of_pages_median || book.number_of_pages || null;
+
+      if (!pages) {
+        pages = await fetchBookPages(book);
+      }
+
+      const pagesNum = Number(pages);
+
+      let category =
+        Array.isArray(book.subject) && book.subject.length > 0
+          ? book.subject[0]
+          : null;
+
+      if (!category) {
+        category = await fetchBookCategory(book);
+        if (category && category.includes(", ")) {
+          category = category.split(", ")[0];
+        }
+      }
+
+      return {
+        id: book.cover_edition_key || book.key,
+        title: book.title,
+        author: book.author_name?.[0] || "Desconocido",
+        description:
+          (book.first_sentence && typeof book.first_sentence === "string"
+            ? book.first_sentence
+            : Array.isArray(book.first_sentence)
+              ? book.first_sentence[0]
+              : book.subtitle) || "Sin descripción disponible.",
+        price: Number((Math.random() * 20 + 15).toFixed(2)),
+        image: book.cover_i
+          ? `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
+          : "/default-cover.jpg",
+        category: category || "Sin categoría",
+        rating: (Math.random() * 1.5 + 3.5).toFixed(1),
+        isbn: book.isbn?.[0] || "",
+        publishedDate: book.first_publish_year || "Desconocido",
+        pages: !isNaN(pagesNum) && pagesNum > 0 ? pagesNum : null,
+      };
+    }),
+  );
+
+  return books;
+};
+
+const Home = () => {
+  const [books, setBooks] = useState<any[]>([]);
+
+  useEffect(() => {
+    fetchBooks("harry potter").then(setBooks);
+  }, []);
 
   return (
     <HomeContainer>
       <SectionHeader />
-      <Carousel books={newReleases} title="llos mejores" />
+      <Carousel books={books} title="Libros de Open Library" />
     </HomeContainer>
   );
 };
