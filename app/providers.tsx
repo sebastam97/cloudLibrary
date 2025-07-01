@@ -3,6 +3,7 @@
 import type { ThemeProviderProps } from "next-themes";
 
 import { HeroUIProvider } from "@heroui/system";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ThemeProvider as NextThemesProvider, useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 import * as React from "react";
@@ -47,11 +48,16 @@ const ThemedApp = ({ children }: { children: React.ReactNode }) => {
 
 export function Providers({ children, themeProps }: ProvidersProps) {
   const router = useRouter();
+  const queryClient = new QueryClient();
 
   return (
     <HeroUIProvider navigate={router.push}>
       <NextThemesProvider {...themeProps}>
-        <ThemedApp>{children}</ThemedApp>
+        <ThemedApp>
+          <QueryClientProvider client={queryClient}>
+            {children}
+          </QueryClientProvider>
+        </ThemedApp>
       </NextThemesProvider>
     </HeroUIProvider>
   );
