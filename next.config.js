@@ -4,8 +4,6 @@ const nextConfig = {
   trailingSlash: true,
   skipTrailingSlashRedirect: true,
   distDir: 'out',
-  basePath: '/cloudLibrary',
-  assetPrefix: '/cloudLibrary',
   images: {
     unoptimized: true,
     remotePatterns: [
