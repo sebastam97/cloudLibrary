@@ -3,7 +3,7 @@
 import { Button } from "@heroui/button";
 import { BsBook, BsClock, BsEye } from "react-icons/bs";
 
-import { useCardHoverAndImage } from "../../hooks/useCardHoverAndImage/useCardHoverAndImage";
+import { useCardHoverAndImage } from "../../../components/Carousel/hooks/useCardHoverAndImage/useCardHoverAndImage";
 
 import {
   CardAuthorStyled,

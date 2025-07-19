@@ -2,7 +2,7 @@
 import React from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
-import BookCard from "./components/Card/Card";
+import BookCard from "./../../shared/components/Card/Card";
 import useCarousel from "./hooks/useCarousel/useCarousel";
 import {
   CarouselArrow,
